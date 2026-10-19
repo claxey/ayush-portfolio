@@ -1,0 +1,50 @@
+.reading-progress{position:fixed;inset:0 auto auto 0;width:100%;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left center;z-index:20;box-shadow:0 0 12px #c1f17870}
+
+.hero-copy>*{animation:hero-rise .7s both cubic-bezier(.2,.75,.25,1)}
+.hero-copy>*:nth-child(1){animation-delay:.05s}
+.hero-copy>*:nth-child(2){animation-delay:.12s}
+.hero-copy>*:nth-child(3){animation-delay:.2s}
+.hero-copy>*:nth-child(4){animation-delay:.28s}
+.hero-copy>*:nth-child(5){animation-delay:.36s}
+@keyframes hero-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.orbit-one{animation:orbit-drift 42s linear infinite}
+.orbit-two{animation:orbit-drift-reverse 55s linear infinite}
+.orbit-three{animation:orbit-spin 65s linear infinite}
+.node-db{animation:node-float 5.2s ease-in-out infinite}
+.node-cache{animation:node-float 6s ease-in-out -1.5s infinite}
+.node-ai{animation:node-float 5.7s ease-in-out -2.8s infinite}
+.core{animation:core-glow 4s ease-in-out infinite}
+@keyframes orbit-drift{from{transform:translate(-50%,-50%) rotate(-25deg)}to{transform:translate(-50%,-50%) rotate(335deg)}}
+@keyframes orbit-drift-reverse{from{transform:translate(-50%,-50%) rotate(38deg)}to{transform:translate(-50%,-50%) rotate(-322deg)}}
+@keyframes orbit-spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes node-float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes core-glow{0%,100%{box-shadow:0 0 40px #c1f17835}50%{box-shadow:0 0 64px #c1f17875}}
+
+html.reveal-ready .section,
+html.reveal-ready .contact-section,
+html.reveal-ready .experience-row,
+html.reveal-ready .project-card,
+html.reveal-ready .skill-group,
+html.reveal-ready .education-row,
+html.reveal-ready .repo-card{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+html.reveal-ready .section.is-visible,
+html.reveal-ready .contact-section.is-visible,
+html.reveal-ready .experience-row.is-visible,
+html.reveal-ready .project-card.is-visible,
+html.reveal-ready .skill-group.is-visible,
+html.reveal-ready .education-row.is-visible,
+html.reveal-ready .repo-card.is-visible{opacity:1;transform:translateY(0)}
+.experience-row:nth-child(2),.skill-group:nth-child(2),.repo-card:nth-child(3n + 2){transition-delay:.08s!important}
+.experience-row:nth-child(3),.skill-group:nth-child(3),.repo-card:nth-child(3n){transition-delay:.16s!important}
+.project-card,.repo-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.project-card:hover,.repo-card:hover{transform:translateY(-4px);border-color:#627354;box-shadow:0 14px 32px #0002}
+.project-light:hover{border-color:#94a482;box-shadow:0 14px 32px #0002}
+.button,.nav-contact,.text-link,.contact-bottom a,.social-links a{transition:color .2s ease,background-color .2s ease,border-color .2s ease,transform .2s ease}
+.button:hover{transform:translateY(-2px)}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-copy>*,.orbit-one,.orbit-two,.orbit-three,.node-db,.node-cache,.node-ai,.core{animation:none!important}
+  html.reveal-ready .section,html.reveal-ready .contact-section,html.reveal-ready .experience-row,html.reveal-ready .project-card,html.reveal-ready .skill-group,html.reveal-ready .education-row,html.reveal-ready .repo-card{opacity:1;transform:none;transition:none}
+  .project-card,.repo-card,.button{transition:none}
+}

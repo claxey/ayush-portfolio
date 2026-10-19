@@ -1,0 +1,10 @@
+.topbar{position:sticky;top:0;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.skip-link{position:fixed;top:10px;left:10px;z-index:30;padding:12px 16px;background:var(--green);color:#172012;font-size:13px;font-weight:700;transform:translateY(-160%);transition:transform .15s ease}
+.skip-link:focus{transform:translateY(0)}
+.motion-toggle{background:transparent;border:1px solid #454d44;border-radius:3px;color:#b5b9b1;padding:10px 12px;font-size:11px;white-space:nowrap;cursor:pointer}
+.motion-toggle:hover,.motion-toggle[aria-pressed="true"]{border-color:var(--green);color:var(--green)}
+:where(a,button,[tabindex]):focus-visible{outline:3px solid var(--green);outline-offset:4px}
+main:focus{outline:none}
+html.reduce-motion,html.reduce-motion *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+html.reduce-motion.reveal-ready .section,html.reduce-motion.reveal-ready .contact-section,html.reduce-motion.reveal-ready .experience-row,html.reduce-motion.reveal-ready .project-card,html.reduce-motion.reveal-ready .skill-group,html.reduce-motion.reveal-ready .education-row,html.reduce-motion.reveal-ready .repo-card{opacity:1!important;transform:none!important}
+@media(max-width:800px){.motion-toggle{align-self:flex-start}}
